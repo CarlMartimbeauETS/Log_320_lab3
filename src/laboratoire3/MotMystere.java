@@ -12,8 +12,6 @@ public class MotMystere {
         Plateau plateau = new Plateau(nomFichierGrille);
         Dictionnaire dictionnaire = new Dictionnaire(nomFichierDict);
 
-        //Résoudre le mot mystere...
-        //Inséré code ici...........
         return null;
     }
 
