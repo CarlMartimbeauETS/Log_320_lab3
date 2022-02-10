@@ -2,6 +2,12 @@ package laboratoire3;
 
 public class app {
     public static void main(String args[]){
-        System.out.println("Hello world");
+
+        MotMystere m = new MotMystere();
+        String nomGrille = "";
+        String nomDict = "";
+        m.Resoudre(nomGrille, nomDict);
+
+
     }
 }
