@@ -5,9 +5,8 @@ public class app {
 
         MotMystere m = new MotMystere();
         String nomGrille = "";
-        String nomDict = "";
+        String nomDict = ".\\ressource\\dict_demo.txt";
         m.Resoudre(nomGrille, nomDict);
-
 
     }
 }
