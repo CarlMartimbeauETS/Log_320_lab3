@@ -1,5 +1,7 @@
 package laboratoire3;
 
+import java.io.FileInputStream;
+
 public class Plateau {
     public Case[][] grilleCases;
 
@@ -8,6 +10,7 @@ public class Plateau {
     }
 
     private void initComponents(String file){}
+        //FileInputStream fileIn = new FileInputStream(file);
 
 
 
