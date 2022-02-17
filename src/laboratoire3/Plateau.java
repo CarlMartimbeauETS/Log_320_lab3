@@ -8,6 +8,7 @@ public class Plateau {
     public char[][] grilleCases;
     int taille;
 
+
     public Plateau(String file){
         try {
             initComponents(file);
@@ -26,23 +27,15 @@ public class Plateau {
         System.out.println(n);
 
         int singleCharInt;
-        int ligne = 0;
-        int colonne = 0;
-        fileIn.read();
-        while ((singleCharInt = fileIn.read()) != -1 && ligne <= taille-1) {
-            if ((char) singleCharInt== '\n'){
-                ligne ++;
-                colonne = 0;
-
+        for (int i = 0; i < taille; i++) {
+            for (int j = 0; j < taille; j++) {
+                singleCharInt = fileIn.read();
+                if (singleCharInt== '\n'){
+                    j-=2;
+                }else{
+                    grilleCases[i][j] = (char)singleCharInt;
+                }
             }
-            else{
-                grilleCases[ligne][colonne] = (char)singleCharInt;
-                colonne++;
-            }
-
-
-
-
         }
         //System.out.println("fini");
         imprimerGille();
@@ -56,6 +49,11 @@ public class Plateau {
             }
             System.out.println();
         }
+    }
+
+
+    public int getTaille() {
+        return taille;
     }
 
 
