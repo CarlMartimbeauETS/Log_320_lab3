@@ -29,10 +29,10 @@ public class MotMystere {
                     System.out.println("South East -> North West");
                 }
                 if (i>1 && j < plateau.getTaille()-2){
-                    System.out.println("South West -> North East");
+                    System.out.println("North West -> South East");
                 }
                 if (j>1 && i < plateau.getTaille()-2){
-                    System.out.println("North East -> South West");
+                    System.out.println("South East -> North West");
                 }
                 if (j < plateau.getTaille()-2 && i < plateau.getTaille()-2){
                     System.out.println("North West -> South East");
