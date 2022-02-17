@@ -24,7 +24,7 @@ public class Plateau {
         taille = n;
         grilleCases = new char[taille][taille];
 
-        System.out.println(n);
+        //System.out.println(n);
 
         int singleCharInt;
         for (int i = 0; i < taille; i++) {
@@ -38,7 +38,7 @@ public class Plateau {
             }
         }
         //System.out.println("fini");
-        imprimerGille();
+        //imprimerGille();
 
     }
 
@@ -54,6 +54,10 @@ public class Plateau {
 
     public int getTaille() {
         return taille;
+    }
+
+    public char obtenirCase(int i, int j){
+        return grilleCases[i][j];
     }
 
 

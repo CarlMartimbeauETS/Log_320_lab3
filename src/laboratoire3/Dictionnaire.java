@@ -8,7 +8,12 @@ public class Dictionnaire {
 
     public Dictionnaire(String file){
         try {
+
             initComponents(file);
+      /*      System.out.println("FROM INSIDE");
+            for (String mot : getListeMotsPossibles("plu")){
+                System.out.println(mot);
+            }*/
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -22,7 +27,7 @@ public class Dictionnaire {
             String mot = ""; String key="";
             while ((input = fis.read()) !=-1){
                 if ((char) input== '\n'){
-                    System.out.println(mot);
+                    //System.out.println(mot);
                     dictionnaire.get(key).add(mot);
                     mot="";
 
@@ -39,5 +44,9 @@ public class Dictionnaire {
         for(Map.Entry<String, ArrayList<String>> entry : dictionnaire.entrySet()) {
             Collections.sort(entry.getValue());
         }
+    }
+
+    public ArrayList<String> getListeMotsPossibles(String clef){
+        return dictionnaire.get(clef);
     }
 }
