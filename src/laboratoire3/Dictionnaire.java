@@ -28,6 +28,7 @@ public class Dictionnaire {
             while ((input = fis.read()) !=-1){
                 if ((char) input== '\n'){
                     //System.out.println(mot);
+                    mot = mot.substring(0, mot.length()-1);
                     dictionnaire.get(key).add(mot);
                     mot="";
 
