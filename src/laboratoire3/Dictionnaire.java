@@ -15,7 +15,6 @@ public class Dictionnaire {
     }
 
     private void initComponents(String file) throws IOException {
-
             FileInputStream fis = new FileInputStream(file);
             //Lire dictionnaire et mettre les différents mots
             dictionnaire= new HashMap<>();
@@ -35,7 +34,6 @@ public class Dictionnaire {
                         dictionnaire.put(key, new ArrayList<>());
                     }
                 }
-
                 }
             }
         for(Map.Entry<String, ArrayList<String>> entry : dictionnaire.entrySet()) {
