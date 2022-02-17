@@ -13,28 +13,28 @@ public class MotMystere {
         ArrayList<String> cles = new ArrayList<>();
         for (int i = 0; i < plateau.getTaille(); i++) {
             for (int j = 0; j < plateau.getTaille(); j++) {
-                if (i>1){
+                if (j>1){
                     System.out.println( "East -> West");
                 }
-                if (i < plateau.getTaille()-2){
+                if (j < plateau.getTaille()-2){
                     System.out.println( "West - East");
                 }
-                if (j>1){
+                if (i>1){
                     System.out.println("South -> North");
                 }
-                if (j < plateau.getTaille()-2){
+                if (i < plateau.getTaille()-2){
                     System.out.println("North -> South");
                 }
                 if (i>1 && j>1){
                     System.out.println("South East -> North West");
                 }
-                if (i>1 && j < plateau.getTaille()-2){
+                if (j>1 && i < plateau.getTaille()-2){
                     System.out.println("North West -> South East");
                 }
-                if (j>1 && i < plateau.getTaille()-2){
+                if (i>1 && j < plateau.getTaille()-2){
                     System.out.println("South East -> North West");
                 }
-                if (j < plateau.getTaille()-2 && i < plateau.getTaille()-2){
+                if (i < plateau.getTaille()-2 && j < plateau.getTaille()-2){
                     System.out.println("North West -> South East");
                 }
 
