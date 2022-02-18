@@ -8,13 +8,15 @@ public class app {
         MotMystere m = new MotMystere();
         String nomGrille = ".\\ressource\\grid_demo.txt";
         String nomDict = ".\\ressource\\dict_demo.txt";
-        //m.initComponents(nomGrille, nomDict);
-        //m.rechercheEst("cas",0,0 );
-        m.Resoudre(nomGrille, nomDict);
-        System.out.println("Liste de mots toruves");
-        for(String mot: m.motsTrouves){
+
+        String[] motsTrouves = m.Resoudre(nomGrille, nomDict);
+        System.out.println("Liste de mots trouves");
+
+        for(String mot: motsTrouves){
             System.out.println(mot);
+
         }
+
 
     }
 }

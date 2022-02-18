@@ -1,6 +1,7 @@
 package laboratoire3;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.SortedSet;
 
@@ -21,39 +22,46 @@ public class MotMystere {
         for (int i = 0; i < plateau.getTaille(); i++) {
             for (int j = 0; j < plateau.getTaille(); j++) {
                 if (j>1){
-                    System.out.println( "East -> West");
+                  //  System.out.println( "East -> West");
 
                 }
                 if (j < plateau.getTaille()-2){
-                    System.out.println( "West - East");
+                  //  System.out.println( "West - East");
 
                     rechercheEst("" + plateau.obtenirCase(i,j) + plateau.obtenirCase(i,j+1) + plateau.obtenirCase(i,j+2)  ,i,j);
                 }
                 if (i>1){
-                    System.out.println("South -> North");
+                   // System.out.println("South -> North");
                 }
                 if (i < plateau.getTaille()-2){
-                    System.out.println("North -> South");
+                  //  System.out.println("North -> South");
                 }
                 if (i>1 && j>1){
-                    System.out.println("South East -> North West");
+                   // System.out.println("South East -> North West");
                 }
                 if (j>1 && i < plateau.getTaille()-2){
-                    System.out.println("North West -> South East");
+                  //  System.out.println("North West -> South East");
                 }
                 if (i>1 && j < plateau.getTaille()-2){
-                    System.out.println("South East -> North West");
+                 //   System.out.println("South East -> North West");
                 }
                 if (i < plateau.getTaille()-2 && j < plateau.getTaille()-2){
-                    System.out.println("North West -> South East");
+                   // System.out.println("North West -> South East");
                 }
 
             }
         }
 
+        String[] listeMotsFormate = new String[this.motsTrouves.size()];
+        for(int i=0; i<motsTrouves.size(); i++) {
+            listeMotsFormate[i] = motsTrouves.get(i);
+        }
+        return listeMotsFormate;
 
-        return null;
     }
+
+
+
 
     public void rechercheEst(String clef, int positionDepartI, int positionDepartJ){
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
@@ -69,17 +77,17 @@ public class MotMystere {
                     String motContruit = clef;
                     int positionCurseur = positionDepartJ + 2;
                     while(mot.startsWith(motContruit)){
-                        System.out.println("Mot onstrut " + motContruit);
-                        System.out.println(" mot rechercher: " + mot);
-                        System.out.println("equals" + mot.equals(motContruit));
+//                        System.out.println("Mot onstrut " + motContruit);
+//                        System.out.println(" mot rechercher: " + mot);
+//                        System.out.println("equals" + mot.equals(motContruit));
                         if (motContruit.equals(mot)){
                             //On a trouve une correspondance et on ajoute a la liste de mos trouves
 
-                            System.out.println("Le mot trouve :" + mot);
+                            //System.out.println("Le mot trouve :" + mot);
                             motsTrouves.add(mot);
                         }
                         positionCurseur ++;
-                        System.out.println("CASE" + plateau.obtenirCase(positionDepartI,positionCurseur));
+                        //System.out.println("CASE" + plateau.obtenirCase(positionDepartI,positionCurseur));
                         motContruit += plateau.obtenirCase(positionDepartI,positionCurseur);
                     }
                 }
