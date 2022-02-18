@@ -32,9 +32,11 @@ public class MotMystere {
                 }
                 if (i>1){
                    // System.out.println("South -> North");
+                    //rechercheNord()
                 }
                 if (i < plateau.getTaille()-2){
-                  //  System.out.println("North -> South");
+                  //  System.out.println("North -> South")//
+                    //rechercheSud()
                 }
                 if (i>1 && j>1){
                    // System.out.println("South East -> North West");
@@ -70,24 +72,16 @@ public class MotMystere {
         //Si des mots sont retournes on entame la recherche
         if(motsPossibles != null){
             for(String mot: motsPossibles){
-                //verifer si assez de place
-                //System.out.println("1");
+                //verifer si assez de place pour faire la recherche
                 if(mot.length() < plateau.taille-positionDepartJ){
                     //on boucle tant que le mot construit par la grille correspond au mot
                     String motContruit = clef;
                     int positionCurseur = positionDepartJ + 2;
                     while(mot.startsWith(motContruit)){
-//                        System.out.println("Mot onstrut " + motContruit);
-//                        System.out.println(" mot rechercher: " + mot);
-//                        System.out.println("equals" + mot.equals(motContruit));
                         if (motContruit.equals(mot)){
-                            //On a trouve une correspondance et on ajoute a la liste de mos trouves
-
-                            //System.out.println("Le mot trouve :" + mot);
                             motsTrouves.add(mot);
                         }
                         positionCurseur ++;
-                        //System.out.println("CASE" + plateau.obtenirCase(positionDepartI,positionCurseur));
                         motContruit += plateau.obtenirCase(positionDepartI,positionCurseur);
                     }
                 }
@@ -96,8 +90,38 @@ public class MotMystere {
         }
     }
 
+    public void rechercheOuest(String clef, int positionDepartI, int positionDepartJ) {
 
 
+    }
+    public void rechercheNord(String clef, int positionDepartI, int positionDepartJ) {
+
+
+    }
+
+    public void rechercheSud(String clef, int positionDepartI, int positionDepartJ) {
+
+
+    }
+    public void rechercheNordEst(String clef, int positionDepartI, int positionDepartJ) {
+
+
+    }
+
+    public void rechercheNordOuest(String clef, int positionDepartI, int positionDepartJ) {
+
+
+    }
+
+    public void rechercheSudOuest(String clef, int positionDepartI, int positionDepartJ) {
+
+
+    }
+
+    public void rechercheSudEst(String clef, int positionDepartI, int positionDepartJ) {
+
+
+    }
 
 
 }
