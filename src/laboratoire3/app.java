@@ -11,11 +11,10 @@ public class app {
 
         String[] motsTrouves = m.Resoudre(nomGrille, nomDict);
         System.out.println("Liste de mots trouves");
-
         for(String mot: motsTrouves){
             System.out.println(mot);
-
         }
+        System.out.println(motsTrouves.length);
 
 
     }
