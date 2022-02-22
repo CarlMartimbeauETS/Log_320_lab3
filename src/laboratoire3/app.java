@@ -7,6 +7,7 @@ public class app {
 
         MotMystere m = new MotMystere();
         String nomGrille = ".\\ressource\\grid_demo.txt";
+        //String nomGrille = ".\\ressource\\grid_testsmol.txt";
         String nomDict = ".\\ressource\\dict_demo.txt";
 
         String[] motsTrouves = m.Resoudre(nomGrille, nomDict);
