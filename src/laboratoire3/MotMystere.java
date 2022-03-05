@@ -4,28 +4,36 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class MotMystere {
-    Plateau plateau;
-    Dictionnaire dictionnaire;
-    ArrayList<String> motsTrouves = new ArrayList<>();
+    private Plateau plateau;
+    private Dictionnaire dictionnaire;
+    private ArrayList<String> motsTrouves = new ArrayList<>();
+    private int nombreDeRecherche = 0;
+    private double tempsDeRechercheSec = 0.0;
+
     public void initComponents(String nomFichierGrille, String nomFichierDict){
         this.plateau = new Plateau(nomFichierGrille);
         this.dictionnaire = new Dictionnaire(nomFichierDict);
+        motsTrouves.clear();
+        nombreDeRecherche = 0;
+        tempsDeRechercheSec = 0.0;
     }
 
     public String[] Resoudre(String nomFichierGrille, String nomFichierDict)
     {
 
         initComponents(nomFichierGrille, nomFichierDict);
-        ArrayList<String> cles = new ArrayList<>();
+
         for (int i = 0; i < plateau.getTaille(); i++) {
             for (int j = 0; j < plateau.getTaille(); j++) {
                 if (j>1){
                     //  System.out.println( "East -> West");
                     rechercheOuest("" + plateau.obtenirCase(i,j) + plateau.obtenirCase(i,j-1) + plateau.obtenirCase(i,j-2)  ,i,j);
+                    nombreDeRecherche++;
                 }
                 if (j < plateau.getTaille()-2){
                   //  System.out.println( "West - East");
                     rechercheEst("" + plateau.obtenirCase(i,j) + plateau.obtenirCase(i,j+1) + plateau.obtenirCase(i,j+2)  ,i,j);
+                    nombreDeRecherche++;
                 }
                 if (i>1){
                    // System.out.println("South -> North");
@@ -65,6 +73,7 @@ public class MotMystere {
 
 
     public void rechercheEst(String clef, int positionDepartI, int positionDepartJ){
+        Chrono.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
         //Si des mots sont retournes on entame la recherche
@@ -87,11 +96,14 @@ public class MotMystere {
                     }
                 }
             }
-
         }
+        Chrono.stop();
+        tempsDeRechercheSec += Chrono.timeInSec();
+        nombreDeRecherche++;
     }
 
     public void rechercheOuest(String clef, int positionDepartI, int positionDepartJ) {
+        Chrono.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
 
@@ -116,11 +128,13 @@ public class MotMystere {
                     }
                 }
             }
-
         }
-
+        Chrono.stop();
+        tempsDeRechercheSec += Chrono.timeInSec();
+        nombreDeRecherche++;
     }
     public void rechercheNord(String clef, int positionDepartI, int positionDepartJ) {
+        Chrono.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
 
@@ -145,12 +159,14 @@ public class MotMystere {
                     }
                 }
             }
-
         }
-
+        Chrono.stop();
+        tempsDeRechercheSec += Chrono.timeInSec();
+        nombreDeRecherche++;
     }
 
     public void rechercheSud(String clef, int positionDepartI, int positionDepartJ) {
+        Chrono.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
         //Si des mots sont retournes on entame la recherche
@@ -173,11 +189,14 @@ public class MotMystere {
                     }
                 }
             }
-
         }
+        Chrono.stop();
+        tempsDeRechercheSec += Chrono.timeInSec();
+        nombreDeRecherche++;
     }
     public void rechercheNordEst(String clef, int positionDepartI, int positionDepartJ) {
-//On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
+        Chrono.start();
+        //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
         //Si des mots sont retournes on entame la recherche
         if(motsPossibles != null){
@@ -201,11 +220,14 @@ public class MotMystere {
                     }
                 }
             }
-
         }
+        Chrono.stop();
+        tempsDeRechercheSec += Chrono.timeInSec();
+        nombreDeRecherche++;
     }
 
     public void rechercheNordOuest(String clef, int positionDepartI, int positionDepartJ) {
+        Chrono.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
         //Si des mots sont retournes on entame la recherche
@@ -231,12 +253,14 @@ public class MotMystere {
                     }
                 }
             }
-
         }
-
+        Chrono.stop();
+        tempsDeRechercheSec += Chrono.timeInSec();
+        nombreDeRecherche++;
     }
 
     public void rechercheSudOuest(String clef, int positionDepartI, int positionDepartJ) {
+        Chrono.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
         //Si des mots sont retournes on entame la recherche
@@ -261,11 +285,14 @@ public class MotMystere {
                     }
                 }
             }
-
         }
+        Chrono.stop();
+        tempsDeRechercheSec += Chrono.timeInSec();
+        nombreDeRecherche++;
     }
 
     public void rechercheSudEst(String clef, int positionDepartI, int positionDepartJ) {
+        Chrono.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
         //Si des mots sont retournes on entame la recherche
@@ -290,9 +317,17 @@ public class MotMystere {
                     }
                 }
             }
-
         }
+        Chrono.stop();
+        tempsDeRechercheSec += Chrono.timeInSec();
+        nombreDeRecherche++;
     }
 
+    public int getNombreDeRecherche(){
+        return nombreDeRecherche;
+    }
 
+    public double getTempsDeRechercheMoyenMicroSec() {
+        return tempsDeRechercheSec/((double)nombreDeRecherche) * 10e6;
+    }
 }
