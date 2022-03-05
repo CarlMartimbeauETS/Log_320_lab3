@@ -330,4 +330,8 @@ public class MotMystere {
     public double getTempsDeRechercheMoyenMicroSec() {
         return tempsDeRechercheSec/((double)nombreDeRecherche) * 10e6;
     }
+
+    public int nbRechercheFructueuses(){
+        return motsTrouves.size();
+    }
 }

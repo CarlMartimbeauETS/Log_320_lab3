@@ -19,6 +19,7 @@ public class app {
         System.out.println("Temps d'exécution: " + Chrono.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
+        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
 
         //N=16
         nomGrille = ".\\ressource\\grid_demo2.txt";
@@ -30,6 +31,7 @@ public class app {
         System.out.println("Temps d'exécution: " + Chrono.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
+        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
 
         //N=32
         nomGrille = ".\\ressource\\grid_demo3.txt";
@@ -41,6 +43,7 @@ public class app {
         System.out.println("Temps d'exécution: " + Chrono.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
+        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
 
         //N=64
         nomGrille = ".\\ressource\\grid_demo4.txt";
@@ -52,6 +55,7 @@ public class app {
         System.out.println("Temps d'exécution: " + Chrono.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
+        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
 
     }
 }
