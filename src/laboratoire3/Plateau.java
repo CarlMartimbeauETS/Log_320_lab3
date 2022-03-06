@@ -6,8 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Plateau {
-    public char[][] grilleCases;
-    int taille;
+    public char[][] grilleCases = null;
+    int taille = 0;
 
 
     public Plateau(String file){
@@ -33,7 +33,6 @@ public class Plateau {
         taille = n;
         grilleCases = new char[taille][taille];
 
-        int singleCharInt;
         int i = 0;
         int j = 0;
         while(c != -1){

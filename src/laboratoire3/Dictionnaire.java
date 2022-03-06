@@ -4,11 +4,10 @@ import java.io.*;
 import java.util.*;
 
 public class Dictionnaire {
-    HashMap<String, ArrayList<String>> dictionnaire;
+    HashMap<String, ArrayList<String>> dictionnaire = null;
 
     public Dictionnaire(String file){
         try {
-
             initComponents(file);
       /*      System.out.println("FROM INSIDE");
             for (String mot : getListeMotsPossibles("plu")){

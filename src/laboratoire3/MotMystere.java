@@ -3,8 +3,8 @@ package laboratoire3;
 import java.util.*;
 
 public class MotMystere {
-    private Plateau plateau;
-    private Dictionnaire dictionnaire;
+    private Plateau plateau = null;
+    private Dictionnaire dictionnaire = null;
     private ArrayList<String> motsTrouves = new ArrayList<>();
     private int nombreDeRecherche = 0;
     private int nombreDeMotsPossible = 0;
@@ -13,6 +13,7 @@ public class MotMystere {
     private Chrono chronoRecherche = new Chrono();
 
     public void initComponents(String nomFichierGrille, String nomFichierDict){
+        chronoRecherche.start();
         this.plateau = new Plateau(nomFichierGrille);
         this.dictionnaire = new Dictionnaire(nomFichierDict);
         motsTrouves.clear();
@@ -20,14 +21,13 @@ public class MotMystere {
         tempsDeRechercheSec = 0.0;
         nombreDeMotsPossible = 0;
         longueurDesMotsTrouves = 0;
+        chronoRecherche.stop();
+        System.out.println("Initialisation: " + chronoRecherche.timeInSec());
     }
 
     public String[] Resoudre(String nomFichierGrille, String nomFichierDict)
     {
-        chronoRecherche.start();
         initComponents(nomFichierGrille, nomFichierDict);
-        chronoRecherche.stop();
-        System.out.println("Initialisation: " + chronoRecherche.timeInSec());
 
         for (int i = 0; i < plateau.getTaille(); i++) {
             for (int j = 0; j < plateau.getTaille(); j++) {
