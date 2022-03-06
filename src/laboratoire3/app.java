@@ -23,7 +23,6 @@ public class app {
         System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
-        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
         System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
         System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
@@ -37,7 +36,6 @@ public class app {
         System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
-        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
         System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
         System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
@@ -51,7 +49,6 @@ public class app {
         System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
-        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
         System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
         System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
@@ -65,7 +62,6 @@ public class app {
         System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
-        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
         System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
         System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
@@ -79,7 +75,6 @@ public class app {
         System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
-        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
         System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
         System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
@@ -96,7 +91,6 @@ public class app {
         System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
-        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
         System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
         System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
@@ -110,7 +104,6 @@ public class app {
         System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
-        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
         System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
         System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
@@ -124,7 +117,6 @@ public class app {
         System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
-        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
         System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
         System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
@@ -138,7 +130,6 @@ public class app {
         System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
-        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
         System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
         System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
@@ -152,7 +143,6 @@ public class app {
         System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
-        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
         System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
         System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
