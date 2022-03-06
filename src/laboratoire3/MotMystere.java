@@ -70,7 +70,7 @@ public class MotMystere {
         }
 
         Collections.sort(this.motsTrouves);
-        String[] listeMotsFormate = this.motsTrouves.stream().distinct().toArray(String[]::new);
+        String[] listeMotsFormate = motsTrouves.toArray(new String[motsTrouves.size()]);
         return listeMotsFormate;
 
     }
@@ -351,10 +351,6 @@ public class MotMystere {
 
     public double getTempsDeRechercheMoyenMicroSec() {
         return tempsDeRechercheSec/((double)nombreDeRecherche) * 10e6;
-    }
-
-    public int nbRechercheFructueuses(){
-        return motsTrouves.size();
     }
 
     public int getNombreDeMotsPossible(){
