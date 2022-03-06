@@ -42,6 +42,7 @@ public class Dictionnaire {
                 }
                 }
             }
+            fis.close();
         for(Map.Entry<String, ArrayList<String>> entry : dictionnaire.entrySet()) {
             Collections.sort(entry.getValue());
         }

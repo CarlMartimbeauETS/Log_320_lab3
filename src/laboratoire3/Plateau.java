@@ -57,6 +57,7 @@ public class Plateau {
 
         //System.out.println("fini");
         //imprimerGrille();
+        fileIn.close();
 
     }
 

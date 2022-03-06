@@ -8,54 +8,75 @@ public class app {
         MotMystere m = new MotMystere();
         String nomGrille = ".\\ressource\\grid_demo.txt";
         String nomDict = ".\\ressource\\dict_demo.txt";
+        Chrono chronoApp= new Chrono();
 
         //N=8
-        Chrono.start();
+        chronoApp.start();
         String[] motsTrouves = m.Resoudre(nomGrille, nomDict);
-        Chrono.stop();
-        System.out.println("Liste de mots trouves");
+        chronoApp.stop();
         System.out.println("Mots trouves: " + motsTrouves.length);
         System.out.println("Grille N = 8");
-        System.out.println("Temps d'exécution: " + Chrono.timeInSec());
+        System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
         System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
+        System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
+        System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
         //N=16
         nomGrille = ".\\ressource\\grid_demo2.txt";
-        Chrono.start();
+        chronoApp.start();
         motsTrouves = m.Resoudre(nomGrille, nomDict);
-        Chrono.stop();
+        chronoApp.stop();
         System.out.println("Mots trouves: " + motsTrouves.length);
         System.out.println("Grille N = 16");
-        System.out.println("Temps d'exécution: " + Chrono.timeInSec());
+        System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
         System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
+        System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
+        System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
         //N=32
         nomGrille = ".\\ressource\\grid_demo3.txt";
-        Chrono.start();
+        chronoApp.start();
         motsTrouves = m.Resoudre(nomGrille, nomDict);
-        Chrono.stop();
+        chronoApp.stop();
         System.out.println("Mots trouves: " + motsTrouves.length);
         System.out.println("Grille N = 32");
-        System.out.println("Temps d'exécution: " + Chrono.timeInSec());
+        System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
         System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
+        System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
+        System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
         //N=64
         nomGrille = ".\\ressource\\grid_demo4.txt";
-        Chrono.start();
+        chronoApp.start();
         motsTrouves = m.Resoudre(nomGrille, nomDict);
-        Chrono.stop();
+        chronoApp.stop();
         System.out.println("Mots trouves: " + motsTrouves.length);
         System.out.println("Grille N = 64");
-        System.out.println("Temps d'exécution: " + Chrono.timeInSec());
+        System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
         System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
         System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
         System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
+        System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
+        System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
 
+        //N=128
+        nomGrille = ".\\ressource\\grid_demo5.txt";
+        chronoApp.start();
+        motsTrouves = m.Resoudre(nomGrille, nomDict);
+        chronoApp.stop();
+        System.out.println("Mots trouves: " + motsTrouves.length);
+        System.out.println("Grille N = 128");
+        System.out.println("Temps d'exécution: " + chronoApp.timeInSec());
+        System.out.println("Nombre de recherches effectues: " + m.getNombreDeRecherche());
+        System.out.println("Temps moyen de recherche (Micro Secondes): " + m.getTempsDeRechercheMoyenMicroSec());
+        System.out.println("Nombre de recherches fructueuses: " + m.nbRechercheFructueuses());
+        System.out.println("Nombre de mots possibles détectés: " + m.getNombreDeMotsPossible());
+        System.out.println("Longueur moyenne des mots trouves: " + m.getLongueurMoyenneDesMotsTrouves());
     }
 }

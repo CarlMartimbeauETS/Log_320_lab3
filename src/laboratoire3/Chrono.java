@@ -1,18 +1,18 @@
 package laboratoire3;
 
 public class Chrono {
-    static private long startTime;
-    static private long stopTime;
+    private long startTime = 0;
+    private long stopTime = 0;
 
-    public static void start(){
+    public void start(){
         startTime = System.nanoTime();
     }
 
-    public static void stop(){
+    public void stop(){
         stopTime = System.nanoTime();
     }
 
-    public static double timeInSec(){
+    public double timeInSec(){
         return (double)(stopTime - startTime)*10e-9;
     }
 
