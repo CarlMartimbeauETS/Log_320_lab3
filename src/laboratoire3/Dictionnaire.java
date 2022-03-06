@@ -4,11 +4,10 @@ import java.io.*;
 import java.util.*;
 
 public class Dictionnaire {
-    HashMap<String, ArrayList<String>> dictionnaire;
+    HashMap<String, ArrayList<String>> dictionnaire = null;
 
     public Dictionnaire(String file){
         try {
-
             initComponents(file);
       /*      System.out.println("FROM INSIDE");
             for (String mot : getListeMotsPossibles("plu")){
@@ -42,6 +41,7 @@ public class Dictionnaire {
                 }
                 }
             }
+            fis.close();
         for(Map.Entry<String, ArrayList<String>> entry : dictionnaire.entrySet()) {
             Collections.sort(entry.getValue());
         }

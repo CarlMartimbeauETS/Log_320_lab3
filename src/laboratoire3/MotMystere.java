@@ -1,31 +1,45 @@
 package laboratoire3;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class MotMystere {
-    Plateau plateau;
-    Dictionnaire dictionnaire;
-    ArrayList<String> motsTrouves = new ArrayList<>();
+    private Plateau plateau = null;
+    private Dictionnaire dictionnaire = null;
+    private ArrayList<String> motsTrouves = new ArrayList<>();
+    private int nombreDeRecherche = 0;
+    private int nombreDeMotsPossible = 0;
+    private int longueurDesMotsTrouves = 0;
+    private double tempsDeRechercheSec = 0.0;
+    private Chrono chronoRecherche = new Chrono();
+
     public void initComponents(String nomFichierGrille, String nomFichierDict){
+        chronoRecherche.start();
         this.plateau = new Plateau(nomFichierGrille);
         this.dictionnaire = new Dictionnaire(nomFichierDict);
+        motsTrouves.clear();
+        nombreDeRecherche = 0;
+        tempsDeRechercheSec = 0.0;
+        nombreDeMotsPossible = 0;
+        longueurDesMotsTrouves = 0;
+        chronoRecherche.stop();
+        System.out.println("Initialisation: " + chronoRecherche.timeInSec());
     }
 
     public String[] Resoudre(String nomFichierGrille, String nomFichierDict)
     {
-
         initComponents(nomFichierGrille, nomFichierDict);
-        ArrayList<String> cles = new ArrayList<>();
+
         for (int i = 0; i < plateau.getTaille(); i++) {
             for (int j = 0; j < plateau.getTaille(); j++) {
                 if (j>1){
                     //  System.out.println( "East -> West");
                     rechercheOuest("" + plateau.obtenirCase(i,j) + plateau.obtenirCase(i,j-1) + plateau.obtenirCase(i,j-2)  ,i,j);
+                    nombreDeRecherche++;
                 }
                 if (j < plateau.getTaille()-2){
                   //  System.out.println( "West - East");
                     rechercheEst("" + plateau.obtenirCase(i,j) + plateau.obtenirCase(i,j+1) + plateau.obtenirCase(i,j+2)  ,i,j);
+                    nombreDeRecherche++;
                 }
                 if (i>1){
                    // System.out.println("South -> North");
@@ -65,6 +79,7 @@ public class MotMystere {
 
 
     public void rechercheEst(String clef, int positionDepartI, int positionDepartJ){
+        chronoRecherche.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
         //Si des mots sont retournes on entame la recherche
@@ -80,6 +95,7 @@ public class MotMystere {
                         if (motContruit.equals(mot)){
                             motsTrouves.add(mot);
                             trouve=true;
+                            longueurDesMotsTrouves += mot.length();
                         } else {
                             positionCurseur ++;
                             motContruit += plateau.obtenirCase(positionDepartI,positionCurseur);
@@ -87,11 +103,15 @@ public class MotMystere {
                     }
                 }
             }
-
+            nombreDeMotsPossible += motsPossibles.size();
         }
+        chronoRecherche.stop();
+        tempsDeRechercheSec += chronoRecherche.timeInSec();
+        nombreDeRecherche++;
     }
 
     public void rechercheOuest(String clef, int positionDepartI, int positionDepartJ) {
+        chronoRecherche.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
 
@@ -108,6 +128,7 @@ public class MotMystere {
                         if (motContruit.equals(mot)){
                             motsTrouves.add(mot);
                             trouve=true;
+                            longueurDesMotsTrouves += mot.length();
                         }
                         else {
                             positionCurseur--;
@@ -116,11 +137,14 @@ public class MotMystere {
                     }
                 }
             }
-
+            nombreDeMotsPossible += motsPossibles.size();
         }
-
+        chronoRecherche.stop();
+        tempsDeRechercheSec += chronoRecherche.timeInSec();
+        nombreDeRecherche++;
     }
     public void rechercheNord(String clef, int positionDepartI, int positionDepartJ) {
+        chronoRecherche.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
 
@@ -137,6 +161,7 @@ public class MotMystere {
                         if (motContruit.equals(mot)){
                             motsTrouves.add(mot);
                             trouve=true;
+                            longueurDesMotsTrouves += mot.length();
                         }
                         else {
                             positionCurseur--;
@@ -145,12 +170,15 @@ public class MotMystere {
                     }
                 }
             }
-
+            nombreDeMotsPossible += motsPossibles.size();
         }
-
+        chronoRecherche.stop();
+        tempsDeRechercheSec += chronoRecherche.timeInSec();
+        nombreDeRecherche++;
     }
 
     public void rechercheSud(String clef, int positionDepartI, int positionDepartJ) {
+        chronoRecherche.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
         //Si des mots sont retournes on entame la recherche
@@ -166,6 +194,7 @@ public class MotMystere {
                         if (motContruit.equals(mot)){
                             motsTrouves.add(mot);
                             trouve=true;
+                            longueurDesMotsTrouves += mot.length();
                         } else {
                             positionCurseur ++;
                             motContruit += plateau.obtenirCase(positionCurseur, positionDepartJ);
@@ -173,11 +202,15 @@ public class MotMystere {
                     }
                 }
             }
-
+            nombreDeMotsPossible += motsPossibles.size();
         }
+        chronoRecherche.stop();
+        tempsDeRechercheSec += chronoRecherche.timeInSec();
+        nombreDeRecherche++;
     }
     public void rechercheNordEst(String clef, int positionDepartI, int positionDepartJ) {
-//On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
+        chronoRecherche.start();
+        //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
         //Si des mots sont retournes on entame la recherche
         if(motsPossibles != null){
@@ -193,6 +226,7 @@ public class MotMystere {
                         if (motContruit.equals(mot)){
                             motsTrouves.add(mot);
                             trouve=true;
+                            longueurDesMotsTrouves += mot.length();
                         } else {
                             positionCurseurI --;
                             positionCurseurJ ++;
@@ -201,11 +235,15 @@ public class MotMystere {
                     }
                 }
             }
-
+            nombreDeMotsPossible += motsPossibles.size();
         }
+        chronoRecherche.stop();
+        tempsDeRechercheSec += chronoRecherche.timeInSec();
+        nombreDeRecherche++;
     }
 
     public void rechercheNordOuest(String clef, int positionDepartI, int positionDepartJ) {
+        chronoRecherche.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
         //Si des mots sont retournes on entame la recherche
@@ -222,6 +260,7 @@ public class MotMystere {
                         if (motContruit.equals(mot)){
                             motsTrouves.add(mot);
                             trouve=true;
+                            longueurDesMotsTrouves += mot.length();
                         }
                         else {
                             positionCurseurI--;
@@ -231,12 +270,15 @@ public class MotMystere {
                     }
                 }
             }
-
+            nombreDeMotsPossible += motsPossibles.size();
         }
-
+        chronoRecherche.stop();
+        tempsDeRechercheSec += chronoRecherche.timeInSec();
+        nombreDeRecherche++;
     }
 
     public void rechercheSudOuest(String clef, int positionDepartI, int positionDepartJ) {
+        chronoRecherche.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
         //Si des mots sont retournes on entame la recherche
@@ -253,6 +295,7 @@ public class MotMystere {
                         if (motContruit.equals(mot)){
                             motsTrouves.add(mot);
                             trouve=true;
+                            longueurDesMotsTrouves += mot.length();
                         } else {
                             positionCurseurI ++;
                             positionCurseurJ --;
@@ -261,11 +304,15 @@ public class MotMystere {
                     }
                 }
             }
-
+            nombreDeMotsPossible += motsPossibles.size();
         }
+        chronoRecherche.stop();
+        tempsDeRechercheSec += chronoRecherche.timeInSec();
+        nombreDeRecherche++;
     }
 
     public void rechercheSudEst(String clef, int positionDepartI, int positionDepartJ) {
+        chronoRecherche.start();
         //On fait une requete au Dictionnaire pour savoir des mots commencent par ces 3 premieres lettres
         ArrayList<String> motsPossibles = dictionnaire.getListeMotsPossibles(clef);
         //Si des mots sont retournes on entame la recherche
@@ -282,6 +329,7 @@ public class MotMystere {
                         if (motContruit.equals(mot)){
                             motsTrouves.add(mot);
                             trouve=true;
+                            longueurDesMotsTrouves += mot.length();
                         } else {
                             positionCurseurI ++;
                             positionCurseurJ ++;
@@ -290,9 +338,30 @@ public class MotMystere {
                     }
                 }
             }
-
+            nombreDeMotsPossible += motsPossibles.size();
         }
+        chronoRecherche.stop();
+        tempsDeRechercheSec += chronoRecherche.timeInSec();
+        nombreDeRecherche++;
     }
 
+    public int getNombreDeRecherche(){
+        return nombreDeRecherche;
+    }
 
+    public double getTempsDeRechercheMoyenMicroSec() {
+        return tempsDeRechercheSec/((double)nombreDeRecherche) * 10e6;
+    }
+
+    public int nbRechercheFructueuses(){
+        return motsTrouves.size();
+    }
+
+    public int getNombreDeMotsPossible(){
+        return nombreDeMotsPossible;
+    }
+
+    public int getLongueurMoyenneDesMotsTrouves() {
+        return longueurDesMotsTrouves/motsTrouves.size();
+    }
 }
